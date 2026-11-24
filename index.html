@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ShopNexa - Your Shopping, Your Choice">
+<title>ShopNexa | Online Shopping</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head><body><header class="header">
+    <a href="#" class="logo">Shop<span>Nexa</span></a><form id="searchForm">
+    <input id="searchInput" type="search"
+    placeholder="পণ্য খুঁজুন...">
+    <button type="submit">Search</button>
+</form>
+
+<div class="header-buttons">
+    <button id="loginOpen">Login</button>
+    <button id="cartOpen">Cart (<span id="cartCount">0</span>)</button>
+</div>
+
+</header><section class="hero">
+    <div>
+        <h1>Welcome to ShopNexa</h1>
+        <h2>Your Shopping, Your Choice.</h2>
+        <p>আপনার পছন্দের সব পণ্য এক জায়গায়।</p>
+        <a href="#products" class="shop-button">Shop Now</a>
+    </div>
+</section><section class="section">
+    <h2>Shop By Category</h2>
+    <div id="categories" class="category-grid"></div>
+</section><section class="section" id="products">
+    <h2>Our Products</h2><div class="filters">
+    <select id="categoryFilter">
+        <option value="">সব ক্যাটাগরি</option>
+    </select>
+
+    <select id="sortFilter">
+        <option value="new">নতুন আগে</option>
+        <option value="low">কম দাম</option>
+        <option value="high">বেশি দাম</option>
+    </select>
+</div>
+
+<div id="productGrid" class="product-grid">
+    <p>পণ্য লোড হচ্ছে...</p>
+</div>
+
+</section><section class="features">
+    <div>🚚<h3>Fast Delivery</h3></div>
+    <div>🔒<h3>Secure Shopping</h3></div>
+    <div>💬<h3>Customer Support</h3></div>
+    <div>↩️<h3>Return Policy</h3></div>
+</section><footer>
+    <h2>ShopNexa</h2>
+    <p>Your Shopping, Your Choice.</p>
+    <a href="policies.html">Policies</a>
+    <a href="contact.html">Contact</a>
+    <p>© 2026 ShopNexa</p>
+</footer><div id="overlay" class="overlay"></div><div id="cartDrawer" class="drawer">
+    <h2>Your Cart</h2>
+    <button id="closeCart">Close</button>
+    <div id="cartItems"></div>
+    <h3>Total: <span id="cartTotal">৳0</span></h3>
+    <button id="checkoutOpen">Checkout</button>
+</div><dialog id="authDialog">
+    <form method="dialog">
+        <button class="close" aria-label="Close">×</button>
+        <h2 id="authTitle">Login</h2>
+        <input id="authEmail" type="email" placeholder="Email" required>
+        <input id="authPassword" type="password" placeholder="Password" required>
+        <input id="authName" type="text" placeholder="আপনার নাম">
+        <button id="authSubmit" type="button">Login</button>
+        <button id="switchAuth" type="button">Create Account</button>
+        <p id="authMessage"></p>
+    </form>
+</dialog><dialog id="checkoutDialog">
+    <form method="dialog">
+        <button class="close" aria-label="Close">×</button>
+        <h2>Checkout</h2>    <input id="customerName" placeholder="আপনার নাম" required>
+    <input id="customerPhone" placeholder="মোবাইল নম্বর" required>
+    <textarea id="customerAddress" placeholder="সম্পূর্ণ ঠিকানা" required></textarea>
+    <input id="customerArea" placeholder="জেলা" required>
+
+    <select id="paymentMethod">
+        <option value="cod">Cash on Delivery</option>
+        <option value="bkash">bKash Manual(01759748984) </option>
+        <option value="nagad">Nagad Manual(01759748984)</option>
+    </select>
+
+    <input id="transactionId" placeholder="Transaction ID (প্রযোজ্য হলে)">
+    <h3 id="checkoutTotal">৳0</h3>
+
+    <button id="placeOrder" type="button">Confirm Order</button>
+    <p id="checkoutMessage"></p>
+</form>
+
+</dialog><script src="app.js"></script></body>
+</html>
